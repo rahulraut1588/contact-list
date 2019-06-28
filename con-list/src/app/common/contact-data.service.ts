@@ -34,31 +34,31 @@ export class ContactDataService {
 
     messageData = [
         {
-            id: 1,    
+            id: 1,
+            senderId: 1,
+            recieverPhone: '6666666666',
+            recieverName: 'Test Name 6',
+            message: 'This is a test message'
+        },
+        {
+            id: 2,    
             senderId: 1,
             recieverPhone: '7777777777',
             recieverName: 'Test Name 7',
             message: 'This is a test message'
         },
         {
-            id: 2,
+            id: 3,
             senderId: 1,
             recieverPhone: '8888888888',
             recieverName: 'Test Name 8',
             message: 'This is a test message'
         },
         {
-            id: 3,
+            id: 4,
             senderId: 1,
             recieverPhone: '9999999999',
             recieverName: 'Test Name 9',
-            message: 'This is a test message'
-        },
-        {
-            id: 4,
-            senderId: 1,
-            recieverPhone: '6666666666',
-            recieverName: 'Test Name 6',
             message: 'This is a test message'
         }
     ];

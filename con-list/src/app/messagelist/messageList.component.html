@@ -1,26 +1,26 @@
 <div class="back-grey pt-40 pb-40">
-        <div class="container back-white table-container p-30">
-            <table class="table table-striped table-bordered no-margin">
-                <thead class="back-teal">
-                    <tr>
-                        <th class="color-white text-center"> Msg Id </th>
-                        <th class="color-white"> Rx Name </th>
-                        <th class="color-white"> Rx Phone </th>
-                        <th class="color-white"> Message </th>
-                        <th class="color-white text-center"> Action </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor='let item of messageList'>
-                        <td class="text-center"> {{item.id}} </td>
-                        <td> {{item.recieverName}} </td>
-                        <td> {{item.recieverPhone}} </td>
-                        <td> {{item.message}} </td>
-                        <td class="text-center">
-                            <button class="btn btn-sm btn-danger"> Delete </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="container back-white table-container p-30">
+        <table class="table table-striped table-bordered no-margin">
+            <thead class="back-teal">
+                <tr>
+                    <th class="color-white text-center"> Msg Id </th>
+                    <th class="color-white"> Rx Name </th>
+                    <th class="color-white"> Rx Phone </th>
+                    <th class="color-white"> Message </th>
+                    <th class="color-white text-center"> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let item of messageList'>
+                    <td class="text-center"> {{item.id}} </td>
+                    <td> {{item.recieverName}} </td>
+                    <td> {{item.recieverPhone}} </td>
+                    <td> {{item.message}} </td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-danger"> Delete </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>

@@ -66,3 +66,33 @@ a:hover { text-decoration: none; color: #222; }
 .pull-right { float: right !important; }
 .ibm { display: inline-block; vertical-align: middle; }
 .align-center { align-items: center; }
+
+/* Forms */
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='number'],
+textarea {
+    background: #eee;
+    color: #333;
+    line-height: 50px;
+    font-size: 20px;
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+input[type='text']::placeholder,
+input[type='tel']::placeholder,
+input[type='email']::placeholder,
+input[type='number']::placeholder,
+textarea::placeholder { color: #333 !important; }
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='number'] { height: 50px; }
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
+input[type='number']:focus { border-color: #02c6d8; outline: 0px; }
+textarea { height: 150px; }

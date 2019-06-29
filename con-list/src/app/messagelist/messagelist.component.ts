@@ -15,6 +15,10 @@ export class MessagelistComponent {
         
         this.messageList = conList.getMessageList();
         this.contactList = conList.getContactList();
+        
+    }
 
+    deletemsg(id) {
+        this.conList.deleteMessage(id);
     }
 }

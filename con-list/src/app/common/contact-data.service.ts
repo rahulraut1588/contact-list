@@ -118,4 +118,13 @@ export class ContactDataService {
             }
         }
     }
+
+    deleteMessage (id:number) {
+        for ( let i = 0; i < this.messageData.length; i++ ) {
+            if ( id == this.messageData[i].id) {
+                let temp = this.messageData.indexOf(this.messageData[i]);;
+                this.messageData.splice(temp, 1);
+            }
+        }
+    }
 }

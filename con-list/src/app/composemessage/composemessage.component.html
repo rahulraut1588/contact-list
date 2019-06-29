@@ -20,16 +20,25 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <button class="btn btn-success btn-lg" (click)='addUser()'>
+                            <button class="btn btn-success btn-lg" (click)='addMessage()'>
                                 Submit
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
-                    <p> <strong> Name:</strong> {{name}} </p>
-                    <p> <strong> Phone:</strong> {{phone}} </p>
-                    <p> <strong> Message:</strong> {{message}} </p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4> Sender Info</h4>
+                        <p> <strong> Id:</strong> {{senderId}} </p> 
+                        <p> <strong> Name:</strong> {{senderName}} </p>
+                        <p> <strong> Phone:</strong> {{senderPhone}} </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4> Reciever Info</h4>
+                        <p> <strong> Name:</strong> {{name}} </p>
+                        <p> <strong> Phone:</strong> {{phone}} </p>
+                        <p> <strong> Message:</strong> {{message}} </p>
+                    </div>
                 </div>
             </div>
         </div>

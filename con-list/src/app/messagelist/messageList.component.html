@@ -4,6 +4,7 @@
             <thead class="back-teal">
                 <tr>
                     <th class="color-white text-center"> Msg Id </th>
+                    <th class="color-white"> Tx Name </th>
                     <th class="color-white"> Rx Name </th>
                     <th class="color-white"> Rx Phone </th>
                     <th class="color-white"> Message </th>
@@ -13,6 +14,7 @@
             <tbody>
                 <tr *ngFor='let item of messageList'>
                     <td class="text-center"> {{item.id}} </td>
+                    <td> {{item.senderName}} </td>
                     <td> {{item.recieverName}} </td>
                     <td> {{item.recieverPhone}} </td>
                     <td> {{item.message}} </td>

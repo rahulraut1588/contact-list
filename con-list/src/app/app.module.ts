@@ -17,7 +17,7 @@ const myRoutes = [
   { path: 'contactList', component: ContactlistComponent },
   { path: 'messageList', component: MessagelistComponent },
   { path: 'addUser', component: AdduserComponent },
-  { path: 'composeMessage', component: ComposemessageComponent}
+  { path: 'composeMessage/:myId', component: ComposemessageComponent}
 ]
 
 @NgModule({

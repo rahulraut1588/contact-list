@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { splitNamespace } from '@angular/core/src/view/util';
 
 @Injectable ()
 
@@ -37,6 +38,7 @@ export class ContactDataService {
         {
             id: 1,
             senderId: 1,
+            senderName: 'Test Name 1',
             recieverPhone: '6666666666',
             recieverName: 'Test Name 6',
             message: 'This is a test message'
@@ -44,6 +46,7 @@ export class ContactDataService {
         {
             id: 2,    
             senderId: 1,
+            senderName: 'Test Name 1',
             recieverPhone: '7777777777',
             recieverName: 'Test Name 7',
             message: 'This is a test message'
@@ -51,6 +54,7 @@ export class ContactDataService {
         {
             id: 3,
             senderId: 1,
+            senderName: 'Test Name 1',
             recieverPhone: '8888888888',
             recieverName: 'Test Name 8',
             message: 'This is a test message'
@@ -58,6 +62,7 @@ export class ContactDataService {
         {
             id: 4,
             senderId: 1,
+            senderName: 'Test Name 1',
             recieverPhone: '9999999999',
             recieverName: 'Test Name 9',
             message: 'This is a test message'
@@ -85,5 +90,23 @@ export class ContactDataService {
             phone: phone
         }
         this.listData.push(appendData);
+    }
+
+    addMessage (sid:number, sname:string, rname:string, rphone:string, rmessage:string ) {
+        for ( let i=0; i<this.messageData.length; i++) {
+            if (this.tempIndex < this.messageData[i].id) {
+                this.tempIndex = this.messageData[i].id;
+            }
+        }
+        let messageData = {
+            id: this.tempIndex + 1,
+            senderId: sid,
+            senderName: sname,
+            recieverName: rname,
+            recieverPhone: rphone,
+            message: rmessage
+        }
+        console.log(messageData);
+        this.messageData.push(messageData);
     }
 }

@@ -46,6 +46,7 @@ a:hover { text-decoration: none; color: #222; }
 .back-grey { background-color: #f0f0f0; }
 .back-dark-grey { background-color: #e0e0e0; }
 .back-teal { background-color: #02c6d8; }
+.back-yellow { background-color: #ffd900 !important; }
 .back-red { background-color: #E74443; }
 .back-dark { background-color: #222; }
 .back-darker{ background-color: #111; }
@@ -96,3 +97,7 @@ input[type='tel']:focus,
 input[type='email']:focus,
 input[type='number']:focus { border-color: #02c6d8; outline: 0px; }
 textarea { height: 150px; }
+
+/* Main Section */
+.main-section { height: calc(100vh - 100px); overflow-x: auto; }
+.table-container {  height: calc(100vh - 180px); overflow-x: auto; }

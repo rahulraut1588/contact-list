@@ -11,6 +11,7 @@ import { ContactlistComponent } from './contactlist/contactlist.component';
 import { MessagelistComponent } from './messagelist/messagelist.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ComposemessageComponent } from './composemessage/composemessage.component';
+import { FooterComponent } from './footer/footer.component';
 
 const myRoutes = [
   { path: '', redirectTo:'/contactList', pathMatch:'full' },
@@ -27,7 +28,8 @@ const myRoutes = [
     ContactlistComponent,
     MessagelistComponent,
     AdduserComponent,
-    ComposemessageComponent
+    ComposemessageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

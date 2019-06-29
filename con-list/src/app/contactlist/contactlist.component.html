@@ -16,7 +16,7 @@
                     <td> {{item.phone}} </td>
                     <td class="text-center">
                         <a routerLink='/composeMessage/{{item.id}}' class="btn btn-sm btn-success"> Send Message </a> &nbsp;&nbsp;
-                        <button class="btn btn-sm btn-danger"> Delete </button>
+                        <button class="btn btn-sm btn-danger" (click)='deleteUser(item.id)'> Delete </button>
                     </td>
                 </tr>
             </tbody>

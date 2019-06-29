@@ -13,4 +13,8 @@ export class ContactlistComponent {
     constructor( private conList:ContactDataService ) {
         this.list = conList.getContactList();
     }
+
+    deleteUser (id) {
+        this.conList.deleteContact(id);
+    }
 }

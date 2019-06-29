@@ -109,4 +109,13 @@ export class ContactDataService {
         console.log(messageData);
         this.messageData.push(messageData);
     }
+
+    deleteContact (id:number) {
+        for ( let i = 0; i < this.listData.length; i++ ) {
+            if ( id == this.listData[i].id) {
+                let temp = this.listData.indexOf(this.listData[i]);;
+                this.listData.splice(temp, 1);
+            }
+        }
+    }
 }

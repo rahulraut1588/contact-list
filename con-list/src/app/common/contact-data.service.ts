@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable ()
 
 export class ContactDataService {
-
+    
+    tempIndex:number = -1;
     listData = [
         {
             id: 1,    
@@ -69,5 +70,20 @@ export class ContactDataService {
 
     getMessageList ():any {
         return this.messageData;
+    }
+
+    addUser (name, phone) {
+        for ( let i=0; i<this.listData.length; i++) {
+            if (this.tempIndex < this.listData[i].id) {
+                this.tempIndex = this.listData[i].id;
+                console.log(this.tempIndex);
+            }
+        }
+        let appendData = {
+            id: this.tempIndex + 1,
+            name: name,
+            phone: phone
+        }
+        this.listData.push(appendData);
     }
 }

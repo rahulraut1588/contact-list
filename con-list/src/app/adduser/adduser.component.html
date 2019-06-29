@@ -5,7 +5,7 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <div class="addUserForm mb-50">
-                    <div class='row mb-20'>
+                    <div class='row mb-30'>
                         <div class="col-sm-6">
                             <input type='text' placeholder="Name" [(ngModel)]='name' />
                         </div>
@@ -13,22 +13,24 @@
                             <input type='tel' placeholder="Phone" [(ngModel)]='phone' />
                         </div>
                     </div>
-                    <div class="row mb-30">
+                    <!-- <div class="row mb-30">
                         <div class="col-sm-12">
                             <textarea [(ngModel)]='message'></textarea>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <input type="submit" class="btn btn-success btn-lg" />
+                            <button class="btn btn-success btn-lg" (click)='addUser()'>
+                                Submit
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
+                <!-- <div class="text-center">
                     <p> <strong> Name:</strong> {{name}} </p>
                     <p> <strong> Phone:</strong> {{phone}} </p>
                     <p> <strong> Message:</strong> {{message}} </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

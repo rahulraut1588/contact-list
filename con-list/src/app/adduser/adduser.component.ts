@@ -12,8 +12,11 @@ export class AdduserComponent {
     phone:string;
     message ='Hi this OTP for your verification is 123456';
 
-    constructor ( public conlist:ContactDataService ) {
+    constructor ( public conlList:ContactDataService ) {
 
     }
     
+    addUser () {
+        this.conlList.addUser(this.name, this.phone);
+    }
 }

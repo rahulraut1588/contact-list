@@ -10,12 +10,14 @@ import { ContactDataService } from './common/contact-data.service';
 import { ContactlistComponent } from './contactlist/contactlist.component';
 import { MessagelistComponent } from './messagelist/messagelist.component';
 import { AdduserComponent } from './adduser/adduser.component';
+import { ComposemessageComponent } from './composemessage/composemessage.component';
 
 const myRoutes = [
   { path: '', redirectTo:'/contactList', pathMatch:'full' },
   { path: 'contactList', component: ContactlistComponent },
   { path: 'messageList', component: MessagelistComponent },
-  { path: 'addUser', component: AdduserComponent }
+  { path: 'addUser', component: AdduserComponent },
+  { path: 'composeMessage', component: ComposemessageComponent}
 ]
 
 @NgModule({
@@ -24,7 +26,8 @@ const myRoutes = [
     HeaderComponent,
     ContactlistComponent,
     MessagelistComponent,
-    AdduserComponent
+    AdduserComponent,
+    ComposemessageComponent
   ],
   imports: [
     BrowserModule,

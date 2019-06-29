@@ -8,6 +8,7 @@ import { ContactDataService } from '../common/contact-data.service';
 
 export class ContactlistComponent {
     
+    title = 'Contact List';
     list:any;
 
     constructor( private conList:ContactDataService ) {

@@ -78,36 +78,45 @@ export class ContactDataService {
     }
 
     addUser (name, phone) {
-        for ( let i=0; i<this.listData.length; i++) {
-            if (this.tempIndex < this.listData[i].id) {
-                this.tempIndex = this.listData[i].id;
-                console.log(this.tempIndex);
+        if ( name == 'Rahul') {
+            return 'not_user';
+        } else {
+            for ( let i=0; i<this.listData.length; i++) {
+                if (this.tempIndex < this.listData[i].id) {
+                    this.tempIndex = this.listData[i].id;
+                }
             }
+            let appendData = {
+                id: this.tempIndex + 1,
+                name: name,
+                phone: phone
+            }
+            this.listData.push(appendData);
+            return 'user_added';
         }
-        let appendData = {
-            id: this.tempIndex + 1,
-            name: name,
-            phone: phone
-        }
-        this.listData.push(appendData);
     }
 
     addMessage (sid:number, sname:string, rname:string, rphone:string, rmessage:string ) {
-        for ( let i=0; i<this.messageData.length; i++) {
-            if (this.tempIndex < this.messageData[i].id) {
-                this.tempIndex = this.messageData[i].id;
+        if ( sid > 0 && sid < 10 ) {
+            for ( let i=0; i<this.messageData.length; i++) {
+                if (this.tempIndex < this.messageData[i].id) {
+                    this.tempIndex = this.messageData[i].id;
+                }
             }
+            let messageData = {
+                id: this.tempIndex + 1,
+                senderId: sid,
+                senderName: sname,
+                recieverName: rname,
+                recieverPhone: rphone,
+                message: rmessage
+            }
+            this.messageData.push(messageData);
+            return 'sent';
+        } else {
+            return 'notSent';
         }
-        let messageData = {
-            id: this.tempIndex + 1,
-            senderId: sid,
-            senderName: sname,
-            recieverName: rname,
-            recieverPhone: rphone,
-            message: rmessage
-        }
-        console.log(messageData);
-        this.messageData.push(messageData);
+
     }
 
     deleteContact (id:number) {

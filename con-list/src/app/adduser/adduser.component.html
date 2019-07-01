@@ -1,6 +1,6 @@
-<div class="back-grey pt-40 pb-40 main-section">
-    <div class="container back-white table-container p-30">
-        <h2 class="color-dark mb-50 text-center"> Add New User Form </h2>
+<div class="main-section">
+    <div class="container table-container p-30">
+        <h2 class="color-dark mb-50 text-center font-30 main-title"> Add New User Form </h2>
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
@@ -20,7 +20,7 @@
                     </div> -->
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <button class="btn btn-success btn-lg" (click)='addUser()'>
+                            <button class="btn btn-lg back-4" (click)='addUser()'>
                                 Submit
                             </button>
                         </div>
@@ -33,5 +33,19 @@
                 </div> -->
             </div>
         </div>
+    </div>
+</div>
+<div class="messageAlert">
+    <div class="animated fadeOut delay-2s alert alert-danger" *ngIf='userName == "invalid"'>
+        Please Enter Username
+    </div>
+    <div class="animated fadeOut delay-2s alert alert-danger" *ngIf='phoneNumber == "invalid"'>
+        Please Enter Phone
+    </div>
+    <div class="animated fadeOut delay-2s alert alert-danger" *ngIf='userFlag == "not_user"'>
+        User Not Added
+    </div>
+    <div class="animated fadeOut delay-2s alert alert-success" *ngIf='userFlag == "user_added"'>
+        User Added Successfull
     </div>
 </div>

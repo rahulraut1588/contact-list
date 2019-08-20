@@ -1,79 +1,27 @@
 import { Injectable } from '@angular/core';
-import { splitNamespace } from '@angular/core/src/view/util';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable ()
 
 export class ContactDataService {
     
     tempIndex:number = -1;
-    listData = [
-        {
-            id: 1,    
-            name: 'Test Name 1',
-            phone: '1111111111',
-        },
-        {
-            id: 2,
-            name: 'Test Name 2',
-            phone: '2222222222',
-        },
-        {
-            id: 3,
-            name: 'Test Name 3',
-            phone: '3333333333',
-        },
-        {
-            id: 4,
-            name: 'Test Name 4',
-            phone: '4444444444',
-        },
-        {
-            id: 5,
-            name: 'Test Name 5',
-            phone: '5555555555',
-        }
-    ];
+    listData:any;
+    messageData:any;
 
-    messageData = [
-        {
-            id: 1,
-            senderId: 1,
-            senderName: 'Test Name 1',
-            recieverPhone: '6666666666',
-            recieverName: 'Test Name 6',
-            message: 'This is a test message'
-        },
-        {
-            id: 2,    
-            senderId: 1,
-            senderName: 'Test Name 1',
-            recieverPhone: '7777777777',
-            recieverName: 'Test Name 7',
-            message: 'This is a test message'
-        },
-        {
-            id: 3,
-            senderId: 1,
-            senderName: 'Test Name 1',
-            recieverPhone: '8888888888',
-            recieverName: 'Test Name 8',
-            message: 'This is a test message'
-        },
-        {
-            id: 4,
-            senderId: 1,
-            senderName: 'Test Name 1',
-            recieverPhone: '9999999999',
-            recieverName: 'Test Name 9',
-            message: 'This is a test message'
-        }
-    ];
+    constructor(private http:HttpClient) {
+        
+        
+    }
 
-    getContactList ():any {
+    getContactList ():Observable<any> {
+        this.listData  = this.http.get('http://demo2435299.mockable.io/contacts');
         return this.listData;
     }
 
     getMessageList ():any {
+        this.messageData  = this.http.get('http://demo2435299.mockable.io/messages');
         return this.messageData;
     }
 

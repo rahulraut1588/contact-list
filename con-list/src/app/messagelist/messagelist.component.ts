@@ -14,8 +14,12 @@ export class MessagelistComponent {
 
     constructor (private conList:ContactDataService) {
         
-        this.messageList = conList.getMessageList();
-        this.contactList = conList.getContactList();
+        conList.getMessageList().subscribe( (res) => {
+            this.messageList = res;
+        });;
+        conList.getContactList().subscribe( (res) => {
+            this.contactList = res;
+        });;
         
     }
 

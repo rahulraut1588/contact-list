@@ -139,3 +139,13 @@ textarea { height: 150px; }
     margin-right: auto;
 }
 
+/* Table */
+.has-sorting { position: relative; }
+.sort-icon {
+    position: absolute;
+    right: 20px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+}

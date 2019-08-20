@@ -4,14 +4,19 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 
 import { ContactDataService } from './common/contact-data.service';
+import { SortService } from './common/sort.service';
+
+import { HeaderComponent } from './header/header.component';
 import { ContactlistComponent } from './contactlist/contactlist.component';
 import { MessagelistComponent } from './messagelist/messagelist.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ComposemessageComponent } from './composemessage/composemessage.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpSampleComponent } from './http-sample/http-sample.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 const myRoutes = [
   { path: '', redirectTo:'/contactList', pathMatch:'full' },
@@ -29,14 +34,16 @@ const myRoutes = [
     MessagelistComponent,
     AdduserComponent,
     ComposemessageComponent,
-    FooterComponent
+    FooterComponent,
+    HttpSampleComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(myRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ ContactDataService ], 
+  providers: [ ContactDataService, SortService ], 
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

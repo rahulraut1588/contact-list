@@ -5,41 +5,39 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <div class="addUserForm mb-50">
-                    <div class='row mb-30'>
-                        <div class="col-sm-6">
-                            <input type='text' placeholder="Sender's Name" [(ngModel)]='senderName' />
+                    <form #msgData="ngForm" (submit)="onSubmit(msgData.value)">
+                        <div class='row mb-30'>
+                            <div class="col-sm-6">
+                                <input 
+                                    type='text' 
+                                    placeholder="Sender's Name" 
+                                    ngModel name="senderName" 
+                                    [value]="senderName"
+                                    />
+                            </div>
+                            <div class="col-sm-6">
+                                <input 
+                                    type='tel' 
+                                    placeholder="Sender's Phone" 
+                                    ngModel name="senderPhone" 
+                                    [value]="senderPhone"
+                                    />
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <input type='tel' placeholder="Sender's Phone" [(ngModel)]='senderPhone' />
+                        <div class="row mb-30">
+                            <div class="col-sm-12">
+                                <textarea>{{message}}</textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-30">
-                        <div class="col-sm-12">
-                            <textarea [(ngModel)]='message'></textarea>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <button class="btn btn-lg back-4 color-1" type="submit">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <button class="btn btn-lg back-4 color-1" (click)='addMessage()'>
-                                Submit
-                            </button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-sm-6">
-                        <h4> Sender Info</h4>
-                        <p> <strong> Id:</strong> {{senderId}} </p> 
-                        <p> <strong> Name:</strong> {{senderName}} </p>
-                        <p> <strong> Phone:</strong> {{senderPhone}} </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h4> Reciever Info</h4>
-                        <p> <strong> Name:</strong> {{name}} </p>
-                        <p> <strong> Phone:</strong> {{phone}} </p>
-                        <p> <strong> Message:</strong> {{message}} </p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

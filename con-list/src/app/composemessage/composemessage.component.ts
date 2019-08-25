@@ -18,27 +18,37 @@ export class ComposemessageComponent {
     senderName:string;
     senderPhone:string;
     msgFlag:string = '';
+    updateResponse:any;
 
-    constructor ( public conlList:ContactDataService, public currRoute:ActivatedRoute ) {
+    constructor ( public conList:ContactDataService, public currRoute:ActivatedRoute ) {
         currRoute.params.subscribe( (params:any) => {
             this.selectedId = params['myId'];
         });
-        this.contactList = this.conlList.getContactList();
-        for (let i=0; i<this.contactList.length; i++) {
-            if ( this.selectedId == this.contactList[i].id) {
-                this.senderId = this.contactList[i].id;
-                this.name = this.senderName = this.contactList[i].name;
-                this.phone = this.senderPhone = this.contactList[i].phone;
+        
+        conList.getContactList().subscribe( (res) => {
+            this.contactList = res;
+            for (let i=0; i<this.contactList.length; i++) {
+                if ( this.selectedId == this.contactList[i].id) {
+                    this.senderId = this.contactList[i].id;
+                    this.name = this.senderName = this.contactList[i].name;
+                    this.phone = this.senderPhone = this.contactList[i].phone;
+                }
             }
-        }
-        if ( !this.senderName ) {
-            alert('User Not Found');
-        } else {
-            
-        }
+        });
+        
     }
 
-    addMessage() {
-        this.msgFlag = this.conlList.addMessage(this.senderId, this.senderName, this.name, this.phone, this.message);
+    onSubmit(msgData) {
+        this.updateResponse = { 
+            senderName: (msgData.senderName) ? msgData.senderName : this.senderName,
+            senderPhone: (msgData.senderPhone) ? msgData.senderPhone : this.senderPhone,
+            message: this.message
+        }
+        this.conList.sendMessage(this.updateResponse).subscribe( (res) => {
+            console.log(res);
+        });
+        // this.updateResponse.senderPhone = (msgData.senderPhone) ? msgData.senderPhone : this.senderPhone;
+        // this.updateResponse.message = this.message;
     }
+
 }

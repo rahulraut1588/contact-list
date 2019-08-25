@@ -23,7 +23,13 @@ export class MessagelistComponent {
         
     }
 
-    deletemsg(id) {
-        this.conList.deleteMessage(id);
+    deletemsg (id) {
+        let delData = {
+            id: id
+        }
+        this.conList.deleteMessage(delData).subscribe((res)=> {
+            this.messageList = res.responseData.messageList,
+            this.contactList = res.responseData.contactList;
+        });
     }
 }

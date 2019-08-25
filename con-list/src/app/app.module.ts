@@ -15,13 +15,14 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { ComposemessageComponent } from './composemessage/composemessage.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpSampleComponent } from './http-sample/http-sample.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const myRoutes = [
   { path: '', redirectTo:'/contactList', pathMatch:'full' },
   { path: 'contactList', component: ContactlistComponent },
   { path: 'messageList', component: MessagelistComponent },
+  { path: 'addUser/:myId', component: AdduserComponent },
   { path: 'addUser', component: AdduserComponent },
   { path: 'composeMessage/:myId', component: ComposemessageComponent}
 ]

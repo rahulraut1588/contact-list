@@ -4,7 +4,7 @@
         <table class="table back-white table-bordered no-margin">
             <thead class="back-2">
                 <tr>
-                    <th class="color-white text-center"> Msg Id </th>
+                    <th class="color-white text-center"> Sr. No. </th>
                     <th class="color-white"> Rx Name </th>
                     <th class="color-white"> Rx Phone </th>
                     <th class="color-white"> Message </th>
@@ -12,8 +12,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let item of messageList'>
-                    <td class="text-center"> {{item.id}} </td>
+                <tr *ngFor='let item of messageList; let i = index'>
+                    <td class="text-center"> {{i + 1}} </td>
                     <td> {{item.recieverName}} </td>
                     <td> {{item.recieverPhone}} </td>
                     <td> {{item.message}} </td>

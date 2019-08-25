@@ -5,32 +5,34 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <div class="addUserForm mb-50">
-                    <div class='row mb-30'>
-                        <div class="col-sm-6">
-                            <input type='text' placeholder="Name" [(ngModel)]='name' />
+                    <form
+                        #userData="ngForm" 
+                        (submit)="onSubmit(userData.value)" >
+                        <div class='row mb-30'>
+                            <div class="col-sm-6">
+                                <input 
+                                    type='text' 
+                                    placeholder="Name" 
+                                    name="name" 
+                                    ngModel [value]="userName" />
+                            </div>
+                            <div class="col-sm-6">
+                                <input 
+                                    type='tel' 
+                                    placeholder="Phone" 
+                                    name="phone" 
+                                    ngModel [value]="phoneNumber" />
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <input type='tel' placeholder="Phone" [(ngModel)]='phone' />
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <button class="btn btn-lg back-4" type="submit">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- <div class="row mb-30">
-                        <div class="col-sm-12">
-                            <textarea [(ngModel)]='message'></textarea>
-                        </div>
-                    </div> -->
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <button class="btn btn-lg back-4" (click)='addUser()'>
-                                Submit
-                            </button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                <!-- <div class="text-center">
-                    <p> <strong> Name:</strong> {{name}} </p>
-                    <p> <strong> Phone:</strong> {{phone}} </p>
-                    <p> <strong> Message:</strong> {{message}} </p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -47,5 +49,8 @@
     </div>
     <div class="animated fadeOut delay-2s alert alert-success" *ngIf='userFlag == "user_added"'>
         User Added Successfull
+    </div>
+    <div class="animated fadeOut delay-2s alert alert-success" *ngIf='userFlag == "user_updated"'>
+        User Updated Successfull
     </div>
 </div>

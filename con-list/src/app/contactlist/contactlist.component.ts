@@ -13,18 +13,25 @@ export class ContactlistComponent {
     list:any;
 
     constructor( private conList:ContactDataService, public sortService:SortService ) {
+        
         conList.getContactList().subscribe( (res) => {
             this.list = res;
         });
+        
     }
 
     deleteUser (id) {
-        this.conList.deleteContact(id);
+        let delData = {
+            id: id
+        }
+        this.conList.deleteContact(delData).subscribe((res)=> {
+            this.list = res.responseData.contactList
+        });
     }
 
     sortName() {
         let sortedList = this.sortService.sortByName(this.list);
         this.list = sortedList;
-        console.log(sortedList);
     }
+
 }

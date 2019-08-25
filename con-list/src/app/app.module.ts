@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { ContactDataService } from './common/contact-data.service';
-import { SortService } from './common/sort.service';
 
 import { HeaderComponent } from './header/header.component';
 import { ContactlistComponent } from './contactlist/contactlist.component';
@@ -44,7 +43,7 @@ const myRoutes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ ContactDataService, SortService ], 
+  providers: [ ContactDataService ], 
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

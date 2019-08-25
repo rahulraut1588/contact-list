@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ContactDataService } from '../common/contact-data.service';
+
+declare var $;
 
 @Component ({
     selector: 'my-messagelist',
     templateUrl: './messagelist.component.html'
 })
 
-export class MessagelistComponent {
+export class MessagelistComponent implements OnInit {
+
+    @ViewChild('dataTable') table;
+    dataTable: any;
+    dtOption: any = {};
 
     title = 'Message List';
     contactList:any;
@@ -30,6 +36,21 @@ export class MessagelistComponent {
         this.conList.deleteMessage(delData).subscribe((res)=> {
             this.messageList = res.responseData.messageList,
             this.contactList = res.responseData.contactList;
+        });
+    }
+
+    ngOnInit(): void {
+        this.dtOption = {
+            "info":     false,
+            "columnDefs": [
+                { 
+                    "pagingType": "full_numbers"
+                }
+            ]
+        }; 
+        this.dataTable = $('.display');
+        $(()=>{  
+            $('.display').DataTable(this.dtOption);
         });
     }
 }

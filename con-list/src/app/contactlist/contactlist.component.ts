@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ContactDataService } from '../common/contact-data.service';
-import { SortService } from '../common/sort.service';
+
+declare var $;
 
 @Component({
     selector: 'my-contact-list',
     templateUrl: './contactlist.component.html'
 })
 
-export class ContactlistComponent {
+export class ContactlistComponent implements OnInit {
     
+    @ViewChild('dataTable') table;
+    dataTable: any;
+    dtOption: any = {};
+
     title = 'Contact List';
     list:any;
 
-    constructor( private conList:ContactDataService, public sortService:SortService ) {
+    constructor( private conList:ContactDataService ) {
         
         conList.getContactList().subscribe( (res) => {
             this.list = res;
@@ -29,9 +34,19 @@ export class ContactlistComponent {
         });
     }
 
-    sortName() {
-        let sortedList = this.sortService.sortByName(this.list);
-        this.list = sortedList;
+    ngOnInit(): void {
+        this.dtOption = {
+            "info":     false,
+            "columnDefs": [
+                { 
+                    "pagingType": "full_numbers"
+                }
+            ]
+        }; 
+        this.dataTable = $('.display');
+        $(()=>{  
+            $('.display').DataTable(this.dtOption);
+        });
     }
 
 }

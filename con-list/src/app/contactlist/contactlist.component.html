@@ -1,14 +1,11 @@
 <div class="main-section">
     <div class="container table-container p-30">
         <h2 class="mb-30 color-dark font-30 main-title"> {{title}} </h2>
-        <table class="table back-white table-bordered no-margin">
+        <table #dataTable class="table display back-white table-bordered no-margin">
             <thead class="back-2">
                 <tr>
                     <th class="color-white text-center"> Sr. No. </th>
-                    <th class="color-white has-sorting"> 
-                        User Name 
-                        <a class="sort-icon" (click) = 'sortName()' > ^ </a> 
-                    </th>
+                    <th class="color-white"> User Name </th>
                     <th class="color-white"> Phone </th>
                     <th class="color-white text-center"> Action </th>
                 </tr>

@@ -123,9 +123,7 @@ textarea { height: 150px; }
 .messageAlert .alert-danger { background: #C74A4A; border-color:#C74A4A; color: #d1e8e2; }
 
 /* Main Section */
-.main-layout { height: calc(100vh - 44px); }
-/* .main-section { height: calc(100vh - 100px); overflow-x: auto; }
-.table-container {  height: calc(100vh - 180px); overflow-x: auto; } */
+.main-section { height: calc(100vh - 44px); overflow-y: auto; }
 .main-title:after {
     content:  '';
     display: block;
@@ -140,12 +138,29 @@ textarea { height: 150px; }
 }
 
 /* Table */
-.has-sorting { position: relative; }
-.sort-icon {
-    position: absolute;
-    right: 20px;
-    display: inline-block;
-    width: 20px;
-    text-align: center;
-    cursor: pointer;
+.table-container .dataTables_length,
+.table-container .dataTables_filter { margin-bottom: 10px; }
+.table-container .dataTables_filter input { 
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+.table-container table.dataTable.no-footer { 
+    border: 1px solid #dee2e6 !important; 
+    border-collapse: collapse; 
+}
+.table-container .display th,
+.table-container .display td { padding: 12px !important; vertical-align: middle; }
+.table-container .display td { background-color: #fff !important; }
+.table-container .dataTables_paginate { margin-top: 20px; }
+.table-container .dataTables_wrapper .dataTables_paginate .paginate_button { font-size: 14px; padding: 7px 10px !important; line-height: 14px !important; margin: 0px 10px 10px 0px; }
+.table-container .dataTables_wrapper .dataTables_paginate .previous,
+.table-container .dataTables_wrapper .dataTables_paginate .next,
+.table-container .dataTables_wrapper .dataTables_paginate .previous:hover,
+.table-container .dataTables_wrapper .dataTables_paginate .next:hover { background: #f8ca99 !important; color: #111 !important; border: 0px !important; }
+.table-container .dataTables_wrapper .dataTables_paginate .previous.disabled,
+.table-container .dataTables_wrapper .dataTables_paginate .next.disabled { opacity: 0.6; }
+.table-container .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.table-container .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover { background: #2b6566 !important; color: #fff !important; border: 0px !important; }
+.table-container .dataTables_wrapper .dataTables_paginate > span > .paginate_button,
+.table-container .dataTables_wrapper .dataTables_paginate > span > .paginate_button:hover { background: transparent !important; border: 0px !important; color: #2b6566 !important; }
+.table-container .dataTables_wrapper .dataTables_paginate > a:last-child { margin: 0px; }

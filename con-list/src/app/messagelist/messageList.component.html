@@ -14,11 +14,11 @@
             <tbody>
                 <tr *ngFor='let item of messageList; let i = index'>
                     <td class="text-center"> {{i + 1}} </td>
-                    <td> {{item.recieverName}} </td>
-                    <td> {{item.recieverPhone}} </td>
+                    <td> {{item.name}} </td>
+                    <td> {{item.phone}} </td>
                     <td> {{item.message}} </td>
                     <td class="text-center">
-                        <button class="btn btn-sm btn-danger" (click)='deletemsg(item.id)'> Delete </button>
+                        <button class="btn btn-sm btn-danger" (click)='deletemsg(item._id)'> Delete </button>
                     </td>
                 </tr>
             </tbody>

@@ -25,23 +25,18 @@ export class ComposemessageComponent {
             this.selectedId = params['myId'];
         });
         
-        conList.getContactList().subscribe( (res) => {
-            this.contactList = res;
-            for (let i=0; i<this.contactList.length; i++) {
-                if ( this.selectedId == this.contactList[i].id) {
-                    this.senderId = this.contactList[i].id;
-                    this.name = this.senderName = this.contactList[i].name;
-                    this.phone = this.senderPhone = this.contactList[i].phone;
-                }
-            }
+        conList.getSpecificUser(this.selectedId).subscribe( (res) => {
+            this.contactList = res[0];
+            this.senderName = this.contactList.name;
+            this.senderPhone = this.contactList.phone;
         });
         
     }
 
     onSubmit(msgData) {
         this.updateResponse = { 
-            senderName: (msgData.senderName) ? msgData.senderName : this.senderName,
-            senderPhone: (msgData.senderPhone) ? msgData.senderPhone : this.senderPhone,
+            name: (msgData.senderName) ? msgData.senderName : this.senderName,
+            phone: (msgData.senderPhone) ? msgData.senderPhone : this.senderPhone,
             message: this.message
         }
         this.conList.sendMessage(this.updateResponse).subscribe( (res) => {

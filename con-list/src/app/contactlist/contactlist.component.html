@@ -16,9 +16,9 @@
                     <td> {{item.name}}</td>
                     <td> {{item.phone}} </td>
                     <td class="text-center">
-                        <a routerLink='/composeMessage/{{item.id}}' class="btn btn-sm back-2 color-white"> Send Message </a> &nbsp;&nbsp;
-                        <a routerLink='/addUser/{{item.id}}' class="btn btn-sm back-4 color-1"> Edit </a> &nbsp;&nbsp;
-                        <button class="btn btn-sm back-red color-white" (click)='deleteUser(item.id)'> Delete </button>
+                        <a routerLink='/composeMessage/{{item._id}}' class="btn btn-sm back-2 color-white"> Send Message </a> &nbsp;&nbsp;
+                        <a routerLink='/addUser/{{item._id}}' class="btn btn-sm back-4 color-1"> Edit </a> &nbsp;&nbsp;
+                        <button class="btn btn-sm back-red color-white" (click)='deleteUser(item._id)'> Delete </button>
                     </td>
                 </tr>
             </tbody>

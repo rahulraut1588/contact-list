@@ -151,6 +151,9 @@ textarea { height: 150px; }
 .table-container .display th,
 .table-container .display td { padding: 12px !important; vertical-align: middle; }
 .table-container .display td { background-color: #fff !important; }
+.table-container .display td:first-child { width: 10%; }
+.table-container .display td:nth-child(2),
+.table-container .display td:nth-child(3) { width: 20%; }
 .table-container .dataTables_paginate { margin-top: 20px; }
 .table-container .dataTables_wrapper .dataTables_paginate .paginate_button { font-size: 14px; padding: 7px 10px !important; line-height: 14px !important; margin: 0px 10px 10px 0px; }
 .table-container .dataTables_wrapper .dataTables_paginate .previous,

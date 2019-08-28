@@ -15,16 +15,12 @@ export class MessagelistComponent implements OnInit {
     dtOption: any = {};
 
     title = 'Message List';
-    contactList:any;
     messageList: any;
 
     constructor (private conList:ContactDataService) {
         
         conList.getMessageList().subscribe( (res) => {
             this.messageList = res;
-        });;
-        conList.getContactList().subscribe( (res) => {
-            this.contactList = res;
         });;
         
     }
@@ -34,8 +30,7 @@ export class MessagelistComponent implements OnInit {
             id: id
         }
         this.conList.deleteMessage(delData).subscribe((res)=> {
-            this.messageList = res.responseData.messageList,
-            this.contactList = res.responseData.contactList;
+            this.messageList = res.doc;
         });
     }
 
@@ -48,7 +43,6 @@ export class MessagelistComponent implements OnInit {
                 }
             ]
         }; 
-        this.dataTable = $('.display');
         $(()=>{  
             $('.display').DataTable(this.dtOption);
         });

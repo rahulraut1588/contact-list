@@ -30,7 +30,7 @@ export class ContactlistComponent implements OnInit {
             id: id
         }
         this.conList.deleteContact(delData).subscribe((res)=> {
-            this.list = res.responseData.contactList
+            this.list = res.doc;
         });
     }
 
@@ -43,10 +43,13 @@ export class ContactlistComponent implements OnInit {
                 }
             ]
         }; 
-        this.dataTable = $('.display');
         $(()=>{  
-            $('.display').DataTable(this.dtOption);
+            setTimeout(this.delay, 2000);
         });
     }
 
+    delay () {
+        // this is a delay function
+        $('.display').DataTable(this.dtOption);
+    }
 }
